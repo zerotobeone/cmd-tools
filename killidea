@@ -1,0 +1,21 @@
+#--------------------------------------------------
+# force kill the IntelliJ IDEA program (use for idea is no response)
+# 强制杀掉IntelliJ IDEA程序（用于idea无响应的时候）
+#
+# e.g killidea
+#
+# author：zerotobeone
+# comment：just test in mac，may be grep the wrong idea program name in Windows or Linux
+#--------------------------------------------------
+
+#!/bin/bash
+port=$1
+pid=`ps -ef |grep 'IntelliJ IDEA'| grep -v grep| head -n 1 | awk '{print $2}'`
+if [ "$pid" = "" ]
+then
+echo "pid is empty, idea is not running"
+else
+echo `ps -ef |grep 'IntelliJ IDEA'| head -n 1`
+kill -9 $pid
+echo "kill idea success, pid is $pid"
+fi
