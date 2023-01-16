@@ -1,0 +1,11 @@
+#--------------------------------------------------
+# get the local ipv4
+# 获取本机的ipv4
+#
+# e.g localipv4
+#
+# author：zerotobeone
+#--------------------------------------------------
+
+#!/bin/bash
+ifconfig| grep inet | grep -v inet6
